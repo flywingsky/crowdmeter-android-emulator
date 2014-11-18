@@ -2575,6 +2575,12 @@ do_sensors_status( ControlClient client, char* args )
     return 0;
 }
 
+static int do_sensors_delay(ControlClient client, char* args)
+{
+
+
+}
+
 /* Sensor commands for get/set sensor values and get available sensor names. */
 static const CommandDefRec sensor_commands[] =
 {
@@ -2589,6 +2595,10 @@ static const CommandDefRec sensor_commands[] =
     { "set", "set sensor values",
       "'set <sensorname> <value-a>[:<value-b>[:<value-c>]]' set the values of a given sensor.\r\n",
       NULL, do_sensors_set, NULL },
+
+    {"set", "set delay",
+      "'set delay <value>' set the delay value of sensors,\r\n",
+      NULL,do_sensors_delay,NULL},
 
     { NULL, NULL, NULL, NULL, NULL, NULL }
 };
